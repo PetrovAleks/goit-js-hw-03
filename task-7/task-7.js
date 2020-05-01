@@ -48,14 +48,14 @@ const account = {
   },
 
   getTransactionTotal(type) {
+    let story = 0;
     // eslint-disable-next-line
     for (const findeType of this.transactions) {
-      let story;
       if (findeType.type === type) {
-        story = findeType.amount;
+        story += findeType.amount;
       }
-      console.log(story);
     }
+    console.log(story);
   },
 };
 // const input = document.getElementById('js-input');
@@ -69,7 +69,7 @@ const account = {
 
 account.deposit(1003, 'deposit');
 account.withdraw(100, 'withdraw');
-account.deposit(1050, 'deposit');
+account.deposit(1150, 'deposit');
 account.withdraw(100, 'withdrawt');
 account.deposit(1020, 'deposit');
 account.withdraw(100, 'withdraw');
