@@ -1,27 +1,8 @@
-const countTotalSalary = employees => {
-  const salaryEmployees = Object.values(employees);
-  let totalSalary = 0;
-  // eslint-disable-next-line
-  for (const salary of salaryEmployees) {
-    totalSalary += salary;
-  }
-  return totalSalary;
+import users from '../users.js';
+
+const getInactiveUsers = users => {
+  const inactiveUsers = users.filter(user => user.isActive);
+  return inactiveUsers;
 };
 
-console.log(countTotalSalary({})); // 0
-
-console.log(
-  countTotalSalary({
-    mango: 100,
-    poly: 150,
-    alfred: 80,
-  }),
-); // 330
-
-console.log(
-  countTotalSalary({
-    kiwi: 200,
-    lux: 50,
-    chelsy: 150,
-  }),
-); // 400
+console.log(getInactiveUsers(users));

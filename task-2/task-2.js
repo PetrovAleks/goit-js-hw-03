@@ -1,10 +1,8 @@
-const countProps = function(obj) {
-  const objProps = Object.values(obj).length;
-  return objProps;
+import users from '../users.js';
+
+const getUsersWithEyeColor = (users, color) => {
+  const colorEye = users.filter(user => user.eyeColor === color);
+  return colorEye;
 };
 
-console.log(countProps({})); // 0
-
-console.log(countProps({ name: 'Mango', age: 2 })); // 2
-
-console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 })); // 3
+console.log(getUsersWithEyeColor(users, 'blue'));

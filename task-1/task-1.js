@@ -1,19 +1,6 @@
-const user = {
-  name: 'Mango',
-  age: 20,
-  hobby: 'html',
-  premium: true,
+import users from '../users.js';
+
+const getUserNames = names => {
+  names.forEach(user => console.log(user.name));
 };
-
-user.mood = 'heppy';
-
-user.hobby = 'skydiving';
-
-user.premium = false;
-
-const keys = Object.keys(user);
-
-// eslint-disable-next-line
-for (const key of keys) {
-  console.log(`${key}:`, user[key]);
-}
+getUserNames(users);
