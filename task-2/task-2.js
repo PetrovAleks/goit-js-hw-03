@@ -1,8 +1,20 @@
-import users from '../users.js';
+const listRef = document.querySelector('#ingredients');
 
-const getUsersWithEyeColor = (users, color) => {
-  const colorEye = users.filter(user => user.eyeColor === color);
-  return colorEye;
-};
+const ingredients = [
+  'Картошка',
+  'Грибы',
+  'Чеснок',
+  'Помидоры',
+  'Зелень',
+  'Приправы',
+];
 
-console.log(getUsersWithEyeColor(users, 'blue'));
+listRef.append(
+  ...ingredients.map(user => {
+    const li = document.createElement('li');
+    li.textContent = user;
+
+    return li;
+  }),
+);
+console.log(listRef);

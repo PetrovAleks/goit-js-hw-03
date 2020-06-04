@@ -1,5 +1,11 @@
-import users from '../users.js';
+const categoriListRef = document.querySelectorAll('#categories');
 
-const getUserNames = names => names.map(user => user.name);
+const itemCategoriRef = document.querySelectorAll('.item');
 
-console.log(getUserNames(users));
+console.log(...categoriListRef);
+
+itemCategoriRef.forEach(el =>
+  console.log(
+    `Категория ${el.firstElementChild.textContent} имеет ${el.lastElementChild.textContent}`,
+  ),
+);
