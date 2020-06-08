@@ -1,8 +1,18 @@
-import users from '../users.js';
+const buttonsDecrementRef = document.querySelector(
+  'button[data-action="decrement"]',
+);
+const buttonsIncrementRef = document.querySelector(
+  'button[data-action="increment"]',
+);
+const inputRef = document.querySelector('#value');
 
-const getInactiveUsers = users => {
-  const inactiveUsers = users.filter(user => !user.isActive);
-  return inactiveUsers;
-};
+let counterValue = 0;
 
-console.log(getInactiveUsers(users));
+buttonsDecrementRef.addEventListener('click', function() {
+  counterValue -= 1;
+  inputRef.textContent = counterValue;
+});
+buttonsIncrementRef.addEventListener('click', () => {
+  counterValue += 1;
+  inputRef.textContent = counterValue;
+});

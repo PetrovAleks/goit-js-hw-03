@@ -1,10 +1,9 @@
-import users from '../users.js';
+const inputRef = document.querySelector('#validation-input');
 
-const getUsersWithAge = (users, min, max) => {
-  const usersAge = users.filter(user => user.age > min && user.age < max);
-  return usersAge;
-};
-
-console.log(getUsersWithAge(users, 20, 30));
-
-console.log(getUsersWithAge(users, 30, 40));
+inputRef.addEventListener('input', e => {
+  if (e.target.value.length === Number(inputRef.getAttribute('data-length'))) {
+    inputRef.classList.replace('invalid', 'valid');
+  } else {
+    inputRef.classList.add('invalid');
+  }
+});
