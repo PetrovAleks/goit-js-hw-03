@@ -2,7 +2,7 @@ const categoriListRef = document.querySelectorAll('#categories');
 
 const itemCategoriRef = document.querySelectorAll('.item');
 
-console.log(...categoriListRef);
+console.log(`В списке ${itemCategoriRef.length} категории.`);
 
 itemCategoriRef.forEach(el =>
   console.log(
