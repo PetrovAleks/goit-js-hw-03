@@ -3,7 +3,7 @@ const boxRef = document.querySelector('#boxes');
 const buttonDestroyRef = document.querySelector(
   'button[data-action="destroy"]',
 );
-const inputRef = document.querySelector('input');
+const inputRef = document.querySelector('#controls>input');
 
 function colorGen() {
   const r = Math.floor(Math.random() * 256);
@@ -14,7 +14,8 @@ function colorGen() {
 const maxInputNumbers = Number(inputRef.getAttribute('max'));
 
 function createBoxes() {
-  const valueInput = document.querySelector('input').value;
+  const valueInput = inputRef.value;
+  const arrDiv = [];
   for (let i = 0; i < valueInput && i < maxInputNumbers; i += 1) {
     const newDiv = document.createElement('div');
     const sizeValue = 30 + 10 * i;
@@ -23,8 +24,9 @@ function createBoxes() {
     newDiv.style.height = `${sizeValue}px`;
 
     newDiv.style.backgroundColor = colorGen();
-    boxRef.appendChild(newDiv);
+    arrDiv.push(newDiv);
   }
+  boxRef.append(...arrDiv);
 }
 
 const destroyBoxes = function() {
@@ -36,4 +38,3 @@ const destroyBoxes = function() {
 
 buttonDestroyRef.addEventListener('click', destroyBoxes);
 buttonRenderRef.addEventListener('click', createBoxes);
-console.log(document);

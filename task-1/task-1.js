@@ -6,6 +6,6 @@ console.log(...categoriListRef);
 
 itemCategoriRef.forEach(el =>
   console.log(
-    `Категория ${el.firstElementChild.textContent} имеет ${el.lastElementChild.textContent}`,
+    `Категория ${el.firstElementChild.textContent},количество элементов  ${el.lastElementChild.children.length}`,
   ),
 );

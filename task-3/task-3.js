@@ -21,10 +21,11 @@ const items = images.map(el => {
   return `<li class = 'list__item'><img src=${el.url} alt=${el.alt} width = '200px'></li>`;
 });
 
-listRef.insertAdjacentHTML('afterend', items);
+listRef.insertAdjacentHTML('afterend', items.join(''));
 const listItemRef = document.querySelectorAll('.list__item');
 listItemRef.forEach(el => {
   el.style.listStyle = 'none';
   el.style.display = 'inline-block';
   el.style.marginRight = '100px';
 });
+console.log(...listItemRef);
